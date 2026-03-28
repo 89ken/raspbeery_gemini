@@ -7,6 +7,6 @@ load_dotenv()
 client = genai.Client()
 
 response = client.models.generate_content(
-    model="gemini-3-flash-preview", contents="空氣成分"
+    model="gemini-3-flash-preview", contents="今日台灣銀行匯率"
 )
 print(response.text)
