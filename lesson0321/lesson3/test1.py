@@ -41,10 +41,9 @@ class Filter:
         # Modify the request body or validate it before processing by the chat completion API.
         # This function is the pre-processor for the API where various checks on the input can be performed.
         # It can also modify the request before sending it to the API.
-        print(f"inlet:{__name__}")
-        print(f"inlet:body:{body}")
-        print(f"inlet:user:{__user__}")
-
+        print("使用者輸入")
+        return body
+        
         if __user__.get("role", "admin") in ["user", "admin"]:
             messages = body.get("messages", [])
 
@@ -60,8 +59,5 @@ class Filter:
         # Modify or analyze the response body after processing by the API.
         # This function is the post-processor for the API, which can be used to modify the response
         # or perform additional checks and analytics.
-        print(f"outlet:{__name__}")
-        print(f"outlet:body:{body}")
-        print(f"outlet:user:{__user__}")
-
+        print("模型輸出")
         return body
